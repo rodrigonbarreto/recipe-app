@@ -1,4 +1,3 @@
-// src/RecipeDetail.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Make sure you have React Router installed
 import { getRecipeById } from '../services/recipeService';

@@ -1,6 +1,6 @@
 import React from 'react';
-import RecipeList from './components/RecipeList';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RecipeList from './components/RecipeList';
 import RecipeDetail from "./components/RecipeDetail";
 
 const router = createBrowserRouter([

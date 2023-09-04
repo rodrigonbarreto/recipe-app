@@ -1,4 +1,3 @@
-// src/RecipeList.js
 import React, { useState, useEffect } from 'react';
 import { getRecipes } from '../services/recipeService';
 import {Link, useSearchParams} from "react-router-dom";
@@ -58,7 +57,7 @@ const RecipeList = () => {
                                 className="join-item btn"
                                 disabled={currentPage === 1}
                                 onClick={() => {
-                                    setSearchParams({ ...searchParams, page: currentPage - 1 })
+                                    setSearchParams({page: currentPage - 1, ingredients: searchParams.get("ingredients") ?searchParams.get("ingredients") : '' })
                                 }}
                             >«</button>
                             <button className="join-item btn" >Page {currentPage} of  {totalPages} </button>
@@ -66,7 +65,7 @@ const RecipeList = () => {
                                 className="join-item btn"
                                 disabled={currentPage === totalPages }
                                 onClick={() => {
-                                    setSearchParams({ ...searchParams, page: currentPage + 1, ingredients: searchParams.get("ingredients") ?searchParams.get("ingredients") : '' })
+                                    setSearchParams({ page: currentPage + 1, ingredients: searchParams.get("ingredients") ?searchParams.get("ingredients") : '' })
                                 }}
                             >»</button>
                         </div>
