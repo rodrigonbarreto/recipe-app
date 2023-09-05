@@ -1,13 +1,17 @@
 import axios from 'axios';
+// const API_BASE_URL = 'http://192.168.1.197:3000/api/v1'; -> local
 const API_BASE_URL = 'https://tranquil-savannah-26362-ebd99de8141d.herokuapp.com/api/v1';
 export const getRecipes = async ({ ingredients, page }) => {
     try {
         const { data: recipes } = await axios.get(`${API_BASE_URL}/recipes`, {
+
             params: {
                 ingredients: ingredients,
                 page: page || 1,
             }
         });
+        console.log("getRecipes");
+        console.log(recipes)
         return recipes;
     } catch (error) {
         throw error;

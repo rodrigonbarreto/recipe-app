@@ -1,16 +1,16 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RecipeList from './components/RecipeList';
+import Recipes from './components/Recipes';
 import RecipeDetail from "./components/RecipeDetail";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <RecipeList />,
+        element: <Recipes />,
     },
     {
         path: "/recipes",
-        element: <RecipeList />,
+        element: <Recipes />,
     },
     {
         path: "/recipes/:id",

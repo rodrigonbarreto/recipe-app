@@ -23,23 +23,23 @@ const RecipeDetail = () => {
             <Navbar />
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={recipe.image} alt={recipe.title} className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={recipe.attributes.image} alt={recipe.attributes.title} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
-                        <h1 className="text-5xl font-bold">{recipe.title}</h1>
-                        <h3>Author: <span className="text-1xl font-bold">{recipe.author.name}</span> </h3>
-                        <h3>Category: <span className="text-1xl font-bold">{recipe.category.title}</span> </h3>
+                        <h1 className="text-5xl font-bold">{recipe.attributes.title}</h1>
+                        <h3>Author: <span className="text-1xl font-bold">{recipe.relationships.author.name}</span> </h3>
+                        <h3>Category: <span className="text-1xl font-bold">{recipe.relationships.category.title}</span> </h3>
                         <p>
-                            <span className="text-1xl font-bold">Cook Time: </span> {recipe.cook_time}
+                            <span className="text-1xl font-bold">Cook Time: </span> {recipe.attributes.cook_time}
                         </p>
                         <p>
-                            <span className="text-1xl font-bold">Prep Time: </span> {recipe.prep_time}
+                            <span className="text-1xl font-bold">Prep Time: </span> {recipe.attributes.prep_time}
                         </p>
                         <p>
-                            <span className="text-1xl font-bold">Ratings: </span> {recipe.ratings}
+                            <span className="text-1xl font-bold">Ratings: </span> {recipe.attributes.ratings}
                         </p>
                         <p> <span className="text-1xl font-bold">Ingredients: </span></p>
                         <ul>
-                            {recipe.ingredients.map((ingredient) => (
+                            {recipe.attributes.ingredients.map((ingredient) => (
                                 <li key={ingredient}>{ingredient}</li>
                             ))}
                         </ul>
