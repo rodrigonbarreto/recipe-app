@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const API_BASE_URL = 'http://192.168.1.197:3000/api/v1'; -> local
-const API_BASE_URL = 'https://patient-dream-3431.fly.dev/api/v1';
+// const API_BASE_URL = 'http://192.168.1.197:3000/api/v1';
+const API_BASE_URL = 'https://exercise-recipe-rod.fly.dev/api/v1';
 export const getRecipes = async ({ ingredients, page }) => {
     try {
         const { data: recipes } = await axios.get(`${API_BASE_URL}/recipes`, {

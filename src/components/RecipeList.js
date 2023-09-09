@@ -27,19 +27,27 @@ const RecipeList = ({ loading, recipes, totalPages, currentPage }) => {
                     <li className="card bg-base-100 shadow-xl" key={recipe.id}>
                         <figure className="h-32">
                             <Link to={`/recipes/${recipe.id}`}>
-                                <img src={recipe.attributes.image} alt={recipe.attributes.title} />
+                                <img src={recipe.image} alt={recipe.title} />
                             </Link>
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">
                                 <Link to={`/recipes/${recipe.id}`}>
-                                    {recipe.attributes.title}
+                                    {recipe.title}
                                 </Link>
                             </h2>
-                            <h3>Category: {recipe.attributes.category.title}</h3>
-                            <h2>Author: {recipe.attributes.author.name}</h2>
-                            <p>Rating: {recipe.attributes.ratings}</p>
+                            <div className="space-y-2 pb-2">
+                                <p>Category: {recipe.category.title}</p>
+                                <p>Author: {recipe.author.name}</p>
+                                <p>Rating: {recipe.ratings}</p>
+                            </div>
 
+                                <h3 className="font-bold">Ingredients:</h3>
+                                <ul className="list-disc">
+                                    {recipe.ingredients.map((ingredient) => (
+                                        <li key={ingredient.id}>{ingredient.title}</li>
+                                    ))}
+                                </ul>
                         </div>
                     </li>
                 ))}

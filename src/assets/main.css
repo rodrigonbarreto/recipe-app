@@ -1353,6 +1353,9 @@ html {
 .flex-none {
   flex: none;
 }
+.list-disc {
+  list-style-type: disc;
+}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -1376,6 +1379,16 @@ html {
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1395,6 +1408,9 @@ html {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-5xl {
   font-size: 3rem;
